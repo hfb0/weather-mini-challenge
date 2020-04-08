@@ -1,5 +1,5 @@
 # Weather Mini Challenge
-> Shows the best days to go to the beach based on the humidity
+> Shows days not to go to the beach, based on humidity
 
 ![](header.png)
 
