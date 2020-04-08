@@ -4,6 +4,6 @@ const weatherController = require('../controllers/weather')
 
 router.get('/', weatherController.index)
 
-// router.post('/', weatherController.index)
+router.post('/', weatherController.show)
 
 module.exports = router
