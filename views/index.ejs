@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach App</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="main">
+    <header>
+      <div class="compass-icon">
+        <img src="/images/compass.svg" alt="">
+      </div>
+    </header>
+
+    <div class="weather-title">
+      <h1>Simple Forecast</h1>
+      <p>What are the best days to go to the beach?</p>
+      <p>(Based on air humidity)</p>
+    </div>
+
+    <form action="/" method="POST">
+      <input type="text" name="city" class="ghost-input" placeholder="Enter a city">
+    </form>
+  </div>
+
+  <% if(city !== null) {%>
+  <h2 class="city"><%= city %></h2>
+  <div class="cards">
+    <% for(var i=0; i < listForecast.length; i++) { %>
+    <div class="card">
+      <h1 class="day"><%= listForecast[i].dayOfWeek %></h1>
+      <div class="icon-des">
+        <img class="icon" src="http://openweathermap.org/img/w/<%= listForecast[i].icon %>.png" alt="">
+        <h3><%= listForecast[i].description %></h3>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <% } %>
+</body>
+</html>
