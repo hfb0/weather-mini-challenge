@@ -30,15 +30,15 @@ class WeatherService {
 
   formatListForecast(listForecast) {
     // Get main properties
-    let daysGoToBeach = utilsService.getRequiredData(listForecast)
+    let daysNotGoToBeach = utilsService.getRequiredData(listForecast)
 
     // Filters past times and rainy days
-    daysGoToBeach = this.getSuitableDates(daysGoToBeach)
+    daysNotGoToBeach = this.getSuitableDates(daysNotGoToBeach)
 
     // Remove equal days of the week
-    daysGoToBeach = utilsService.removeDuplicity(daysGoToBeach)
+    daysNotGoToBeach = utilsService.removeDuplicity(daysNotGoToBeach)
 
-    return daysGoToBeach
+    return daysNotGoToBeach
   }
 
   getSuitableDates(listForecast) {
@@ -46,7 +46,7 @@ class WeatherService {
 
     return listForecast.filter(
       (forecast) =>
-        forecast.goToBeach &&
+        !forecast.goToBeach &&
         forecast.dt.isAfter(today) &&
         this.isIdealTimeGoToBeach(forecast.dt)
     )
@@ -54,7 +54,7 @@ class WeatherService {
 
   // Avoid night periods
   isIdealTimeGoToBeach(momentDatatime) {
-    const earlyMorning = moment(momentDatatime).hour(5)
+    const earlyMorning = moment(momentDatatime).hour(8)
     const lateMorning = moment(momentDatatime).hour(11)
 
     const earlyAfternoon = moment(momentDatatime).hour(14)

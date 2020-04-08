@@ -18,7 +18,7 @@
 
     <div class="weather-title">
       <h1>Simple Forecast</h1>
-      <p>What are the best days to go to the beach?</p>
+      <p>What are not the best days to go to the beach?</p>
       <p>(Based on air humidity)</p>
     </div>
 
@@ -32,7 +32,7 @@
   <div class="cards">
     <% for(var i=0; i < listForecast.length; i++) { %>
     <div class="card">
-      <h1 class="day"><%= listForecast[i].dayOfWeek %></h1>
+      <h1 class="day"><%= listForecast[i].dayOfWeek%></h1>
       <div class="icon-des">
         <img class="icon" src="http://openweathermap.org/img/w/<%= listForecast[i].icon %>.png" alt="">
         <h3><%= listForecast[i].description %></h3>
@@ -42,4 +42,5 @@
   </div>
   <% } %>
 </body>
+
 </html>
