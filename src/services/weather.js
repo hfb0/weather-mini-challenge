@@ -1,6 +1,6 @@
 const axios = require('axios')
 const moment = require('moment')
-const config = require('../config/weather-api')
+const config = require('../../config/weather-api')
 
 const utilsService = require('./utils')
 
